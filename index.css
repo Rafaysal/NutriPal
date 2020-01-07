@@ -270,14 +270,14 @@ input{
        width: 40%;
    }
    *{
-       font-size: 1em;
+       font-size: 0.9em;
    }
     .form{
-        width: 80%;
+        width: 85%;
         margin: 10% auto;
     }
     .foods{
-        width: 90%;
+        width: 95%;
     }
     figure input[type=number]{
         width: 30%;
@@ -287,7 +287,7 @@ input{
         margin: 0 auto;
     }
     .progress{
-        width: 95%;
+        width: 85%;
     }
     .progress span{
         
