@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type='text/css' rel='stylesheet' href='index.css'/>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap" rel="stylesheet">
+    <title>Fitness Pal</title>
+</head>
+<body>
+    <div class = 'container'>
+        <h1 style="text-decoration: underline">NutriPal</h1>
+    <div class='form'>
+    <section class='gender'>
+        <span>Gender: </span>
+        <div class = 'gender'>
+        <label for="male">Male</label>
+        <input name='gender' type="radio" id='male' value='male'>
+        <label for="female">Female</label>
+        <input name='gender' type="radio" id='female' value='female'>
+        </div>
+    </section>
+    <br>
+    <section>
+    <label for="weight">Weight (kg) : </label>
+    <input id = 'weight' name='weight' type="number" required>
+    </section>
+    <br>
+    <section>
+    <label for="height">Height (cm) : </label>
+    <input id = 'height' name='height' type="number" required>
+    </section>  
+    <br>
+    <section>
+    <label for="age">Age: </label>
+    <input id = 'age' name='age' type="number" required>
+    </section>
+    <br>
+    <br>
+    <section class='activity'>
+        <label for="activity">Activity Level: </label>
+        <select name="activity" id="activity">
+            <option value="1.2">Little to no exercise</option>
+            <option value="1.375">Light exercise (1–3 days per week)</option>
+            <option value="1.55">Moderate exercise (3–5 days per week)</option>
+            <option value="1.725">Heavy exercise (6–7 days per week)</option>
+            <option value="1.9">Very heavy exercise (twice per day, extra heavy workouts)</option>
+        </select>
+    </section>
+    <br>
+    <section class = 'radio'>
+        Desired caloric deficit/surplus: 
+        <span id='cutbulk'></span> kCal
+        
+        <br>
+        <span>Deficit</span><input type="range" name="goals" id="goals" min='-500' max='500' step='20' value='0' onchange="change()"> <span>Surplus</span>  
+        <br>
+        <br>
+    </section>
+    <section class = 'energy'>
+        <button onclick="energy()"><span>Calculate</span></button>
+        <br>
+        <div class = 'info' id='bmr'>a</div>
+        <br>
+        <div class = 'info' id='req'>b</div>
+        <br>
+        <div class = 'info' id='final'>c</div>
+    </section>
+    </div>
+
+    <div class='foods'>
+    <h1>What did you eat today?</h1>
+    <ol>
+        <li>Click on all of the items you ate today</li>
+        <li>Adjust the quantities to how much you consumed. For example: <ul><li>If you ate 250 g of Salmon enter '2.5'</li><li>If you drank half a cup of milk enter '0.5'</li></ul></li>
+        <li>Only the clicked items will be counted towards calculation</li>
+        <li>Find out how close you are to your caloric and macronutrient goals!</li>
+    </ol>
+    <h2>Protein rich foods</h2>
+    <div  class='pics'>
+        
+        <figure>
+                <figcaption>Salmon (100g)</figcaption>
+                <input type='number' value=1 class='quantity' >
+                <img  src="salmon.jpg"> 
+        <img class = 'x' src="x.png">
+        </figure>
+        
+        <figure>
+                <figcaption>Chicken Breast (100g)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="chicken.jpg">      
+        <img class = 'x' src="x.png">
+        </figure>
+  
+        <figure  id='eggs'>
+                <figcaption>1 Egg</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="egg.jpg" >  
+        <img class = 'x' src="x.png">
+        </figure>
+                
+        <figure  id='steak'>
+                <figcaption>Steak (100g)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="steak.jpg" >
+        
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='tofu'>
+                <figcaption>Tofu (100g)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="tofu.jpg" > 
+        
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='milk'>
+                <figcaption>1 cup Milk (250mL)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="milk.jpg" >
+        
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='powder'>
+                <figcaption>1 scoop Protein powder</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="powder.jpg" >
+        
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='cottage'>
+                <figcaption>Cottage Cheese (100g)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="cottage.jpg">
+        
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='shrimp'>
+                <figcaption>Shrimp (100g)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="shrimp.jpg" >
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='thigh'>
+                <figcaption>Chicken thigh (100g)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="thigh.jpg" >
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='greek'>
+                <figcaption>Greek Yogurt (2 tbsp)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="greek.jpg" >
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='mince'>
+                <figcaption>Minced meat (100g)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="mince.jpg" >
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='turkey'>
+                <figcaption>Turkey (100g)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="turkey.jpg">
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='edamame'>
+                <figcaption>Edamame (100g)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="edamame.jpeg">
+        <img class = 'x' src="x.png">
+        </figure>
+
+        <figure  id='chocMilk'>
+                <figcaption>1 cup Chocolate Milk (240 mL)</figcaption>
+                <input type='number' value=1 class='quantity'>
+                <img src="chock.jpeg">
+        <img class = 'x' src="x.png">
+        </figure>
+    </div>
+    </div>
+
+    <div class='foods'>
+            <h2>Carb rich foods</h2>
+            <div class='pics'>
+                
+                <figure>
+                        <figcaption>Rice (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="rice.jpg" id='rice'>
+                        
+                
+                <img class = 'x' src="x.png"></figure>
+                
+                <figure >
+                        <figcaption>Potato/Sweet potato (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="sweet.jpeg" id='sweet'>      
+                
+                <img class = 'x' src="x.png"></figure>
+        
+                <figure >
+                        <figcaption>Oats (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="oats.jpg" id='oats'>  
+                
+                <img class = 'x' src="x.png"></figure>
+        
+                <figure >
+                        <figcaption>Pasta (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="pasta.jpg" id='pasta'>
+                
+                <img class = 'x' src="x.png"></figure>
+        
+                <figure >
+                        <figcaption>1 slice of bread</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="bread.jpeg" id='bread'> 
+                <img class = 'x' src="x.png"></figure>
+
+                <figure >
+                        <figcaption>1 Burger bun</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="burger.jpg" id='burger'> 
+                <img class = 'x' src="x.png"></figure>
+        
+                <figure >
+                        <figcaption>Lentils (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="lentil.jpg" id='lentil'>
+                
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>Black beans (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="bean.jpg" id='bean'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>Quinoa (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="quinoa.jpg" id='quinoa'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>1 Paratha</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="paratha.jpg" id='paratha'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>1 Apple</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="apple.jpg" id='apple'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>1 Banana</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="banana.jpg" id='banana'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>1 Orange</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="orange.jpeg" id='orange'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>French fries (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="fries.jpg" id='fries'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>Mushrooms (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="mushroom.jpeg" id='mushroom'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>Spinach Cooked (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="spinach.jpg" id='spinach'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>Berries (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="berries.jpg" id='berries'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>1 Tomato (100g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="tomato.jpg" id='tomato'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>Oreo (3 cookies)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="oreo.jpg" id='oreo'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>Dairy Milk Bar(45g)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="dairy.jpg" id='dairy'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>Sugar (1 tsp)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="sugar.jpg" id='dairy'>
+                <img class = 'x' src="x.png"></figure>
+                <figure >
+                        <figcaption>Coke (1 can)</figcaption>
+                        <input type='number' value=1 class='quantity'>
+                        <img src="coke.jpg" id='dairy'>
+                <img class = 'x' src="x.png"></figure>
+            </div>
+            </div>
+            <div class='foods'>
+                    <h2>Fat rich foods</h2>
+                    <div class='pics'>
+                        
+                        <figure>
+                                <figcaption>Olive Oil (1 tbsp)</figcaption>
+                                <input type='number' value=1 class='quantity'>
+                                <img src="olive.png" id='olive'> 
+                        <img class = 'x' src="x.png"></figure>
+                        
+                        <figure >
+                                <figcaption>Butter (10g)</figcaption>
+                                <input type='number' value=1 class='quantity'>
+                                <img src="butter.jpg" id='butter'>      
+                        <img class = 'x' src="x.png"></figure>
+                        <figure >
+                                <figcaption>10 Almonds</figcaption>
+                                <input type='number' value=1 class='quantity'>
+                                <img src="almond.jpg" id='almond'>      
+                        <img class = 'x' src="x.png"></figure>
+                        <figure >
+                                <figcaption>Peanut butter (2 tbsp)</figcaption>
+                                <input type='number' value=1 class='quantity'>
+                                <img src="peanut.jpg" id='peanut'>      
+                        <img class = 'x' src="x.png"></figure>
+                        <figure >
+                                <figcaption>1 Avocado</figcaption>
+                                <input type='number' value=1 class='quantity'>
+                                <img src="avocado.jpg" id='avocado'>      
+                        <img class = 'x' src="x.png"></figure>
+                        <figure >
+                                <figcaption>Cheddar cheese (100g) </figcaption>
+                                <input type='number' value=1 class='quantity'>
+                                <img src="cheddar.jpg" id='cheddar'>      
+                        <img class = 'x' src="x.png"></figure>
+                        <figure >
+                                <figcaption>Cooking Oil (1 tbsp) </figcaption>
+                                <input type='number' value=1 class='quantity'>
+                                <img src="oil.jpg" id='oil'>      
+                        <img class = 'x' src="x.png"></figure>
+                        
+                    </div>
+            </div>
+                    <button onclick="calculate()"><span>Calculate</span></button>
+                    <h2 id='bottom'>Percentages of daily goals reached:</h2>
+                    <div class = 'progress'>
+                            <span id = 'cal' style="background: green">Calories</span>
+                    </div>
+
+                    <div class = 'progress'>
+                                <span id = 'prot' style="background: red">Protein</span>
+                    </div>
+
+                    <div class = 'progress'>
+                                <span id = 'carbo' style="background: blue">Carbs</span>
+                    </div>
+
+                    <div class = 'progress'>
+                                <span id = 'fato' style="background: orange">Fats</span>
+                    </div>
+                    <h2>Adjust macronutrient breakup</h2>
+                    <div class='buttons'>
+                    <button  class='green diets'>Recommended: 50 C/25 P/25 F</button>
+                    <button  class='diets'>Ketogenic: 5 C/20 P/75 F</button>
+                    <button  class='diets'>Paleo: 25 C/25 P/50 F</button>
+                    </div>
+                    <div class='sticky'></div>
+        
+        
+    <script type='text/javascript' src='app.js'></script>
+</body>
+</html>
