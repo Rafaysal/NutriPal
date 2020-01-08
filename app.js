@@ -43,6 +43,7 @@ let foods = [{name: 'salmon', category: 'protein', calories: 208, serving:100, p
 {name: 'dairy milk', category: 'carbs', calories: 240, serving:45, protein: 7.3, carbs: 57, fat: 30,  clicked: false, quantity: 1},
 {name: 'sugar', category: 'carbs', calories: 16, serving:4, protein: 0, carbs: 4.2, fat: 0,  clicked: false, quantity: 1},
 {name: 'coke', category: 'carbs', calories: 150, serving:368, protein: 0, carbs: 39, fat: 0,  clicked: false, quantity: 1},
+{name: 'gluco biscuit', category: 'carbs', calories: 80, serving:16.3, protein: 1, carbs: 12.1, fat: 3,  clicked: false, quantity: 1}
 
 
 
@@ -52,7 +53,8 @@ let foods = [{name: 'salmon', category: 'protein', calories: 208, serving:100, p
 {name: 'peanut butter', category: 'fat', calories: 188, serving:32, protein: 8, carbs: 6, fat: 16,  clicked: false, quantity: 1},
 {name: 'avocado', category: 'fat', calories: 322, serving:201, protein: 4, carbs: 17, fat: 29,  clicked: false, quantity: 1},
 {name: 'cheddar', category: 'fat', calories: 402, serving:100, protein: 25, carbs: 1.3, fat: 33,  clicked: false, quantity: 1},
-{name: 'canola oil', category: 'fat', calories: 120, serving:13.6, protein: 0, carbs: 0, fat: 14,  clicked: false, quantity: 1}
+{name: 'canola oil', category: 'fat', calories: 120, serving:13.6, protein: 0, carbs: 0, fat: 14,  clicked: false, quantity: 1},
+
 
 ]
 
