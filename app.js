@@ -101,6 +101,10 @@ for(let i = 0; i<figures.length; i++){
         figures[i].style.fontWeight = 'bold'
         foods[i].clicked = true;
         xs[i].style.visibility = "visible"
+        figures[i].classList.add('shake')
+        setTimeout(()=>{
+            figures[i].classList.remove('shake')
+        },600)
 })
 }
 
