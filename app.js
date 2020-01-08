@@ -53,7 +53,7 @@ let foods = [{name: 'salmon', category: 'protein', calories: 208, serving:100, p
 {name: 'peanut butter', category: 'fat', calories: 188, serving:32, protein: 8, carbs: 6, fat: 16,  clicked: false, quantity: 1},
 {name: 'avocado', category: 'fat', calories: 322, serving:201, protein: 4, carbs: 17, fat: 29,  clicked: false, quantity: 1},
 {name: 'cheddar', category: 'fat', calories: 402, serving:100, protein: 25, carbs: 1.3, fat: 33,  clicked: false, quantity: 1},
-{name: 'canola oil', category: 'fat', calories: 120, serving:13.6, protein: 0, carbs: 0, fat: 14,  clicked: false, quantity: 1},
+{name: 'canola oil', category: 'fat', calories: 120, serving:13.6, protein: 0, carbs: 0, fat: 14,  clicked: false, quantity: 1}
 
 
 ]
