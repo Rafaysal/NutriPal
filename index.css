@@ -56,6 +56,7 @@ input[type=number]{
     box-shadow: 2px 2px black;
     background: yellow;
     color: black;  
+    padding: 1.5%;
 }
 figure input[type=number]{
     
@@ -337,6 +338,7 @@ input{
     }
     figure input[type=number]{
         width: 30%;
+        padding: 0;
     }
     ol{
         width: 90%;
