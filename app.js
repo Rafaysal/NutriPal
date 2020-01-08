@@ -43,7 +43,7 @@ let foods = [{name: 'salmon', category: 'protein', calories: 208, serving:100, p
 {name: 'dairy milk', category: 'carbs', calories: 240, serving:45, protein: 7.3, carbs: 57, fat: 30,  clicked: false, quantity: 1},
 {name: 'sugar', category: 'carbs', calories: 16, serving:4, protein: 0, carbs: 4.2, fat: 0,  clicked: false, quantity: 1},
 {name: 'coke', category: 'carbs', calories: 150, serving:368, protein: 0, carbs: 39, fat: 0,  clicked: false, quantity: 1},
-{name: 'gluco biscuit', category: 'carbs', calories: 80, serving:16.3, protein: 1, carbs: 12.1, fat: 3,  clicked: false, quantity: 1}
+{name: 'gluco biscuit', category: 'carbs', calories: 80, serving:16.3, protein: 1, carbs: 12.1, fat: 3,  clicked: false, quantity: 1},
 
 
 
